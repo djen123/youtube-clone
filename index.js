@@ -93,9 +93,30 @@ document.querySelectorAll(".category").forEach(item => {
     const category = item.dataset.cat;
 
     // Convert category to search query
-    const searchTerm = category === "home" ? "popular videos" : category;
+    const searchTerm =
+      category === "home" ? "popular videos" :
+      category === "trending" ? "trending videos" :
+      category === "music" ? "music videos" :
+      category === "gaming" ? "gaming videos" :
+      category === "news" ? "latest news" :
+      category === "sports" ? "sports highlights" :
+      category === "movies" ? "movie trailers" :
+      category === "learning" ? "educational videos" :
+      category === "fashion" ? "fashion beauty tutorials" :
+      category === "live" ? "live streams" :
+      category;
 
     input.value = searchTerm;
     getItems("relevance");
   });
 });
+
+window.onload = () => {
+  // Highlight Home category
+  const home = document.querySelector('[data-cat="home"]');
+  home.classList.add("active-category");
+
+  // Auto-load popular videos
+  input.value = "popular videos";
+  getItems("relevance");
+};
