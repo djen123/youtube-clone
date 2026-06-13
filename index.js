@@ -1,6 +1,6 @@
 
 //api key
-const api_key =  "AIzaSyD2LbPfF2ILyJh65KfqeExWG9xWrlhJWMg";
+const api_key =  "";
 const input = document.getElementById("input");
 const button = document.getElementById("btn");
 const videoList = document.getElementById("video-list");
