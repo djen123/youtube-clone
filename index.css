@@ -1,23 +1,29 @@
+
+#sidebar {
+  position: sticky;
+  top: 10px;
+  height: auto;
+  z-index: 1;
+  cursor:pointer;
+}
+
+
+#video-list {
+  position: relative;
+  z-index: 2;
+}
+
+.active-category {
+  background-color: #333 !important;
+  color: #ff4d4d !important;
+  font-weight: bold;
+}
+
 .video-card {
   cursor: pointer;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .video-card:hover {
-  transform: scale(1.03);
-}
-#sidebar .category {
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
-  transition: background .2s;
-}
-
-#sidebar .category:hover {
-  background: #333;
-}
-
-#sidebar .active-category {
-  background: #d32f2f !important;
-  color: white;
+  transform: scale(1.02);
 }

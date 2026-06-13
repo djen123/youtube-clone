@@ -1,5 +1,6 @@
-const api_key =  "AIzaSyD2LbPfF2ILyJh65KfqeExWG9xWrlhJWMg";
 
+//api key
+const api_key =  "AIzaSyD2LbPfF2ILyJh65KfqeExWG9xWrlhJWMg";
 const input = document.getElementById("input");
 const button = document.getElementById("btn");
 const videoList = document.getElementById("video-list");
@@ -61,6 +62,7 @@ async function getItems(filter = "relevance") {
     alert("Error fetching videos");
   }
 }
+
 function playVideo(id) {
   videoList.innerHTML = `
     <div class="col-12">
@@ -77,20 +79,21 @@ function searchFilter() {
   const filter = document.getElementById("filterInput").value;
   getItems(filter);
 }
-// CATEGORY CLICK HANDLER
+
+// category click handler
 document.querySelectorAll(".category").forEach(item => {
   item.addEventListener("click", () => {
 
-    // Remove previous active highlight
+    // previous active highlight removed 
     document.querySelectorAll(".category").forEach(c => c.classList.remove("active-category"));
 
-    // Highlight selected
+    //  selected
     item.classList.add("active-category");
 
     // Get category name
     const category = item.dataset.cat;
 
-    // Convert category to search query
+    // Converting  category to search query
     const searchTerm =
       category === "home" ? "popular videos" :
       category === "trending" ? "trending videos" :
@@ -110,12 +113,9 @@ document.querySelectorAll(".category").forEach(item => {
 });
 
 window.onload = () => {
-  // Highlight Home category
   const home = document.querySelector('[data-cat="home"]');
   home.classList.add("active-category");
 
-  // Auto-load popular videos
   input.value = "popular videos";
   getItems("relevance");
-  input.value="";
 };
