@@ -1,4 +1,4 @@
-const api_key =  process.env.YOUTUBE_API_KEY;
+const api_key =  "AIzaSyD2LbPfF2ILyJh65KfqeExWG9xWrlhJWMg";
 
 const input = document.getElementById("input");
 const button = document.getElementById("btn");
