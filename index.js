@@ -1,4 +1,4 @@
-const api_key = "AIzaSyD2LbPfF2ILyJh65KfqeExWG9xWrlhJWMg";
+const api_key =  process.env.YOUTUBE_API_KEY;
 
 const input = document.getElementById("input");
 const button = document.getElementById("btn");
@@ -61,8 +61,6 @@ async function getItems(filter = "relevance") {
     alert("Error fetching videos");
   }
 }
-
-// Replace thumbnail with embedded player
 function playVideo(id) {
   videoList.innerHTML = `
     <div class="col-12">
@@ -119,4 +117,5 @@ window.onload = () => {
   // Auto-load popular videos
   input.value = "popular videos";
   getItems("relevance");
+  input.value="";
 };
